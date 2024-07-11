@@ -1,0 +1,10 @@
+components/ui/*
+gen/**/*.ts
+tailwind.config.ts
+**/*.js
+**/*.mjs
+**/*.md
+**/*.yml
+**/*.yaml
+**/*.json
+**/*.css

@@ -1,3 +1,98 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:tailwindcss/recommended",
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "tailwindcss",
+    "filenames",
+    "prefer-arrow",
+    "unused-imports"
+  ],
+  "root": true,
+  "rules": {
+    "@typescript-eslint/no-extra-semi": "error",
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "@typescript-eslint/adjacent-overload-signatures": "error",
+    "@typescript-eslint/no-empty-interface": "error",
+    "@typescript-eslint/no-inferrable-types": "error",
+    "@typescript-eslint/prefer-namespace-keyword": "error",
+    "@typescript-eslint/no-unsafe-declaration-merging": "off",
+    "@typescript-eslint/require-await": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "filenames/match-regex": [
+      "error",
+      "^[a-z0-9]+(-[a-z0-9]+)*(.test|.mock|.config|.stories|.cy|.d)?$"
+    ],
+    "no-extra-semi": "off",
+    "no-empty-function": "off",
+    "require-await": "off",
+    "no-empty-pattern": "off",
+    "tailwindcss/classnames-order": "error",
+    "tailwindcss/no-custom-classname": [
+      "error",
+      {
+        "whitelist": ["mdx"]
+      }
+    ],
+    "import/no-default-export": "error",
+    "import/exports-last": "error",
+    "prefer-arrow/prefer-arrow-functions": [
+      "error",
+      {
+        "disallowPrototype": true,
+        "singleReturnOnly": false,
+        "classPropertiesAllowed": false
+      }
+    ],
+    "prefer-arrow-callback": [
+      "error",
+      { "allowNamedFunctions": true }
+    ],
+    "func-style": [
+      "error",
+      "expression",
+      { "allowArrowFunctions": true }
+    ],
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    // 型定義が追加されるまで一度追加
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-call": "off"
+  },
+  "overrides": [
+    {
+      "files": ["./app/**"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    },
+    {
+      "files": ["./app/**/layout.tsx"],
+      "rules": {
+        "import/exports-last": "off"
+      }
+    }
+  ]
 }
