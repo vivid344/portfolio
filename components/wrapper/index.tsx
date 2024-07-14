@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {
   children: ReactNode;
-  className?: any;
+  className?: string;
   x?: number;
   y?: number;
   delay?: number;
