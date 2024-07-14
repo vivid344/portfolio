@@ -74,16 +74,11 @@
         "args": "after-used",
         "argsIgnorePattern": "^_"
       }
-    ],
-    // 型定義が追加されるまで一度追加
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-unsafe-member-access": "off",
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/no-unsafe-call": "off"
+    ]
   },
   "overrides": [
     {
-      "files": ["./app/**"],
+      "files": ["./app/**", "middleware.ts"],
       "rules": {
         "import/no-default-export": "off"
       }

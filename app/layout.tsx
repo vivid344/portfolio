@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 
 import { PropsWithChildren } from "react";
+import { headers } from "next/headers";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -16,13 +17,6 @@ import {
 import { cn } from "@/lib/utils/shadcn";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "三好良弥 | Ryoya Miyoshi",
-  description:
-    "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
-  icons: "/favicon.ico",
-};
 
 const links = [
   {
@@ -41,6 +35,52 @@ const links = [
     title: "Works",
   },
 ];
+
+export const metadata: () => Metadata = () => {
+  const headersList = headers();
+  const path = headersList.get("x-path");
+  return {
+    title: `${links.find((link) => link.href === path)?.title} - 三好良弥 | Ryoya Miyoshi`,
+    description:
+      "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
+    icons: "/favicon.ico",
+    keywords: [
+      "三好",
+      "良弥",
+      "三好 良弥",
+      "みよし りょうや",
+      "みよし",
+      "りょうや",
+      "vivid344",
+    ],
+    authors: [
+      {
+        name: "三好 良弥",
+        url: "https://github.com/vivid344",
+      },
+    ],
+    creator: "三好 良弥",
+    openGraph: {
+      type: "website",
+      locale: "ja_JP",
+      url: "https://vivid-344.vercel.app",
+      site_name: "三好良弥 | Ryoya Miyoshi",
+      title: "三好良弥 | Ryoya Miyoshi",
+      description:
+        "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
+      images: ["https://vivid-344.vercel.app/ogp.jpg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@vivid_344",
+      creator: "@vivid_344",
+      title: "三好良弥 | Ryoya Miyoshi",
+      description:
+        "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
+      images: ["https://vivid-344.vercel.app/ogp.jpg"],
+    },
+  };
+};
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (

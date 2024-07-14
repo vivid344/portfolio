@@ -83,8 +83,8 @@ const Home = () => {
           alt="三好良弥 | Ryoya Miyoshi"
           loading="eager"
           priority
-          height={1000}
-          width={1000}
+          height={400}
+          width={400}
         />
       </Wrapper>
     </>
