@@ -74,7 +74,7 @@ const Home = () => {
         </div>
       </Wrapper>
       <Wrapper
-        className="relative block h-full w-[47%] max-lg:hidden"
+        className="relative block h-full w-[47%] min-w-[250px] max-lg:hidden"
         x={100}
         y={0}
       >
