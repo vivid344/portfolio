@@ -1,6 +1,5 @@
-import type { Config } from "tailwindcss";
-
-const config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -8,8 +7,13 @@ const config = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
-  prefix: "",
   theme: {
+    screens: {
+      sm: "480px",
+      md: "720px",
+      lg: "976px",
+      xl: "1440px",
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -18,6 +22,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        poppins: ["var(--font-poppins)"],
+        rubik: ["var(--font-rubik)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -60,7 +68,7 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
+          from: { height: 0 },
           to: {
             height: "var(--radix-accordion-content-height)",
           },
@@ -69,7 +77,7 @@ const config = {
           from: {
             height: "var(--radix-accordion-content-height)",
           },
-          to: { height: "0" },
+          to: { height: 0 },
         },
       },
       animation: {
@@ -79,6 +87,4 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config;
-
-export default config;
+};

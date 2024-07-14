@@ -4,6 +4,9 @@ const nextConfig = {
     reactCompiler: true,
     ppr: true,
   },
+  images: {
+    domains: ["images.microcms-assets.io"],
+  },
 };
 
 export default nextConfig;
