@@ -59,6 +59,7 @@ const Home = () => {
                 <Link
                   target="blank"
                   href={link.href}
+                  aria-label={link.name}
                   className={cn(
                     buttonVariants({
                       variant: "outline",
