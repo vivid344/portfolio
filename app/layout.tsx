@@ -63,21 +63,20 @@ export const metadata: () => Metadata = () => {
     openGraph: {
       type: "website",
       locale: "ja_JP",
-      url: "https://vivid-344.vercel.app",
+      url: "https://vivid344.vercel.app",
       site_name: "三好良弥 | Ryoya Miyoshi",
       title: "三好良弥 | Ryoya Miyoshi",
       description:
         "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
-      images: ["https://vivid-344.vercel.app/ogp.jpg"],
+      images: ["https://vivid344.vercel.app/ogp.jpg"],
     },
     twitter: {
       card: "summary_large_image",
-      site: "@vivid_344",
       creator: "@vivid_344",
       title: "三好良弥 | Ryoya Miyoshi",
       description:
         "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
-      images: ["https://vivid-344.vercel.app/ogp.jpg"],
+      images: ["https://vivid344.vercel.app/ogp.jpg"],
     },
   };
 };
