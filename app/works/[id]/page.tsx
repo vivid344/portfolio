@@ -41,7 +41,7 @@ const ContentPage = async ({
     contentId: params.id,
   });
   return (
-    <div className="flex flex-col items-start gap-5 overflow-hidden">
+    <div className="flex size-full flex-col items-start gap-5 overflow-hidden">
       <Badge className="gap-2">
         <Briefcase className="size-5" />
         Works Detail
@@ -49,7 +49,7 @@ const ContentPage = async ({
       <Heading>{content.title}</Heading>
       <div className="grid w-full grid-cols-1 items-start justify-center md:grid-cols-2">
         <Wrapper
-          className="relative flex size-full min-w-[250px] justify-center"
+          className="relative flex w-full min-w-[250px] justify-center"
           x={-100}
           y={0}
         >
@@ -70,7 +70,7 @@ const ContentPage = async ({
           <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
             <Info className="size-8" /> 詳細
           </h2>
-          <div className="py-4 font-poppins text-base text-gray-700 [text-wrap:balance] sm:text-2xl">
+          <div className="whitespace-pre-wrap py-4 font-poppins text-base text-gray-700 [text-wrap:balance] sm:text-2xl">
             {content.body}
           </div>
           <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
