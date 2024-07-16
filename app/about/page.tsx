@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Circle, Lightbulb, User2 } from "lucide-react";
 
 import { Heading } from "@/components/heading";
@@ -17,6 +18,10 @@ const skills = [
   "Angular",
   "Tailwind CSS",
 ];
+
+const metadata: Metadata = {
+  title: "About",
+};
 
 const About = () => {
   return (
@@ -43,10 +48,10 @@ const About = () => {
         </Wrapper>
       </div>
       <Wrapper className="block" y={100} delay={0.31}>
-        <h1 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
+        <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
           <Lightbulb className="size-8" />{" "}
           プログラミング言語
-        </h1>
+        </h2>
         <div className="mt-2 flex h-fit w-full flex-row justify-between gap-2 p-2 max-lg:flex-col lg:gap-7">
           {language.map((hobby) => {
             return (
@@ -61,9 +66,9 @@ const About = () => {
         </div>
       </Wrapper>
       <Wrapper className="block" y={100} delay={0.31}>
-        <h1 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
+        <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
           <Lightbulb className="size-8" /> フレームワーク等
-        </h1>
+        </h2>
         <div className="mt-2 flex h-fit w-full flex-row justify-between gap-2 p-2 max-lg:flex-col lg:gap-7">
           {skills.map((hobby) => {
             return (
@@ -82,3 +87,4 @@ const About = () => {
 };
 
 export default About;
+export { metadata };

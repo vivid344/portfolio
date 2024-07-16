@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Briefcase } from "lucide-react";
 
 import { Heading } from "@/components/heading";
@@ -5,6 +6,10 @@ import { ProjectCard } from "@/components/project-card";
 import { Badge } from "@/components/ui/badge";
 import { Contents } from "@/lib/types/content";
 import { client } from "@/lib/utils/client";
+
+const metadata: Metadata = {
+  title: "Works",
+};
 
 const Works = async () => {
   const { contents }: Contents = await client.get({
@@ -18,7 +23,6 @@ const Works = async () => {
         Works
       </Badge>
       <Heading>仕事</Heading>
-
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {contents.map((content, index) => {
           return (
@@ -37,3 +41,4 @@ const Works = async () => {
 };
 
 export default Works;
+export { metadata };

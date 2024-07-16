@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 
 import { PropsWithChildren } from "react";
-import { headers } from "next/headers";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -37,10 +36,11 @@ const links = [
 ];
 
 export const metadata: () => Metadata = () => {
-  const headersList = headers();
-  const path = headersList.get("x-path");
   return {
-    title: `${links.find((link) => link.href === path)?.title} - 三好良弥 | Ryoya Miyoshi`,
+    title: {
+      template: "%s - 三好良弥 | Ryoya Miyoshi",
+      default: "三好良弥 | Ryoya Miyoshi",
+    },
     description:
       "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
     icons: "/favicon.ico",
@@ -106,7 +106,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         </header>
         <main
           className={cn(
-            "screen relative flex min-h-[calc(100vh_-_theme(spacing.16))] items-center justify-between break-words bg-transparent bg-[radial-gradient(#2f7df4_1px,transparent_1px)] px-40 pb-4 [background-size:16px_16px] max-md:p-8 max-sm:pt-12",
+            "screen relative flex min-h-[calc(100vh_-_theme(spacing.16))] items-center justify-between break-words bg-transparent bg-[radial-gradient(#21b5bf_1px,transparent_1px)] px-40 pb-4 [background-size:16px_16px] max-md:p-8 max-sm:pt-12",
             { "bg-white": "#E6E7EB" },
           )}
         >

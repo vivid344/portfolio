@@ -8,6 +8,7 @@ interface Content {
   }[];
   body: string;
   technology: string;
+  link?: string;
 }
 
 interface Contents {
