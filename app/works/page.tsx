@@ -19,11 +19,12 @@ const Works = async () => {
       </Badge>
       <Heading>仕事</Heading>
 
-      <div className="flex w-full flex-row flex-wrap gap-3 max-lg:flex-col">
+      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {contents.map((content, index) => {
           return (
             <ProjectCard
               key={content.id}
+              id={content.id}
               index={index}
               title={content.title}
               src={content.image[0].url}

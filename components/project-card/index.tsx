@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -12,14 +14,13 @@ type Props = {
   index: number;
   title: string;
   src: string;
+  id: string;
 };
 
 const ProjectCard = (props: Props) => {
   return (
     <Wrapper
-      className={
-        "min-h-[345px] max-w-[50%] max-lg:max-w-full"
-      }
+      className="min-h-[345px]"
       y={0}
       scale={0.8}
       delay={props.index / 4}
@@ -29,13 +30,18 @@ const ProjectCard = (props: Props) => {
         <CardHeader>
           <CardTitle>{props.title}</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex flex-col items-center">
           <Image
             alt={props.title}
             src={props.src}
             width={250}
             height={250}
           />
+          <Link href={`/works/${props.id}`}>
+            <Button type="button" className="mt-4">
+              Show more
+            </Button>
+          </Link>
         </CardContent>
       </Card>
     </Wrapper>
