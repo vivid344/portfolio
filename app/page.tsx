@@ -80,6 +80,7 @@ const Home = () => {
         y={0}
       >
         <Image
+          className="mx-auto"
           src="/image.webp"
           alt="三好良弥 | Ryoya Miyoshi"
           loading="eager"

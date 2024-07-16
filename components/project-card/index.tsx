@@ -34,8 +34,8 @@ const ProjectCard = (props: Props) => {
           <Image
             alt={props.title}
             src={props.src}
-            width={250}
-            height={250}
+            height={400}
+            width={400}
           />
           <Link href={`/works/${props.id}`}>
             <Button type="button" className="mt-4">
