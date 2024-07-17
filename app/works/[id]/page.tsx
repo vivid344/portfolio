@@ -27,6 +27,7 @@ const generateMetadata = async (
     (await parent).openGraph?.images || [];
   return {
     title: content.title,
+    description: content.body,
     openGraph: {
       images: [
         ...(image ? [image] : []),
@@ -86,7 +87,7 @@ const ContentPage = async ({
             <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
               <Info className="size-8" /> 詳細
             </h2>
-            <div className="whitespace-pre-wrap py-4 font-poppins text-base text-gray-700 [text-wrap:balance] sm:text-2xl">
+            <div className="whitespace-pre-wrap py-4 font-poppins text-base text-gray-700 sm:text-2xl">
               {content.body}
             </div>
             <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
