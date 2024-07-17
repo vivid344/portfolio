@@ -44,9 +44,6 @@ export const metadata: () => Metadata = () => {
     description:
       "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
     icons: "/favicon.ico",
-    alternates: {
-      canonical: "https://vivid344.vercel.app",
-    },
     keywords: [
       "三好",
       "良弥",

@@ -33,6 +33,9 @@ const generateMetadata = async (
         ...previousImages,
       ],
     },
+    alternates: {
+      canonical: `https://vivid344.vercel.app/works${params.id}`,
+    },
   };
 };
 

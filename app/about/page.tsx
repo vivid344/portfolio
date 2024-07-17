@@ -22,6 +22,9 @@ const skills = [
 
 const metadata: Metadata = {
   title: "About",
+  alternates: {
+    canonical: "https://vivid344.vercel.app/about",
+  },
 };
 
 const About = () => {

@@ -10,6 +10,9 @@ import { cn } from "@/lib/utils/shadcn";
 
 const metadata: Metadata = {
   title: "Works",
+  alternates: {
+    canonical: "https://vivid344.vercel.app/works",
+  },
 };
 
 const Works = async () => {

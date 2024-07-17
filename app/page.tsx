@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -33,6 +34,12 @@ const links = [
     icon: <Github />,
   },
 ];
+
+const metadata: Metadata = {
+  alternates: {
+    canonical: "https://vivid344.vercel.app",
+  },
+};
 
 const Home = () => {
   return (
@@ -99,3 +106,4 @@ const Home = () => {
 };
 
 export default Home;
+export { metadata };
