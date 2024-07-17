@@ -75,8 +75,8 @@ const ContentPage = async ({
               alt={content.title}
               loading="eager"
               priority
-              height={400}
-              width={400}
+              height={600}
+              width={600}
             />
           </Wrapper>
           <Wrapper
