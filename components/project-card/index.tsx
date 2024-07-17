@@ -36,10 +36,11 @@ const ProjectCard = (props: Props) => {
             height={400}
             width={400}
           />
-          <Link href={`/works/${props.id}`}>
-            <Button type="button" className="mt-4">
-              Show more
-            </Button>
+          <Link
+            href={`/works/${props.id}`}
+            className="mt-4"
+          >
+            <Button type="button">Show more</Button>
           </Link>
         </CardContent>
       </Card>

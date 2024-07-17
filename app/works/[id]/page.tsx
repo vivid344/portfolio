@@ -97,7 +97,7 @@ const ContentPage = async ({
                   target="_blank"
                   className="py-4 font-poppins text-base text-gray-700 underline [text-wrap:balance] sm:text-2xl"
                 >
-                  リンクはこちら
+                  {content.title}
                 </Link>
               </>
             )}
