@@ -54,7 +54,7 @@ const ContentPage = async ({
           Works Detail
         </Badge>
         <Heading>{content.title}</Heading>
-        <div className="grid w-full grid-cols-1 items-start justify-center md:grid-cols-2 md:gap-8">
+        <div className="grid w-full grid-cols-1 items-start justify-center lg:grid-cols-2 lg:gap-8">
           <Wrapper
             className="relative flex w-full min-w-[250px] justify-center"
             x={-100}
