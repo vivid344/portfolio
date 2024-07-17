@@ -20,7 +20,6 @@ type Props = {
 const ProjectCard = (props: Props) => {
   return (
     <Wrapper
-      className="min-h-[345px]"
       y={0}
       scale={0.8}
       delay={props.index / 4}
