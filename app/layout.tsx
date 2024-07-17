@@ -104,14 +104,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
             ))}
           </nav>
         </header>
-        <main
-          className={cn(
-            "screen relative flex min-h-[calc(100vh_-_theme(spacing.16))] items-center justify-between break-words bg-transparent bg-[radial-gradient(#21b5bf_1px,transparent_1px)] px-40 pb-4 [background-size:16px_16px] max-md:p-8 max-sm:pt-12",
-            { "bg-white": "#E6E7EB" },
-          )}
-        >
-          {children}
-        </main>
+        {children}
         <SpeedInsights />
         <Analytics />
       </body>
