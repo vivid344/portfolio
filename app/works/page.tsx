@@ -30,9 +30,9 @@ const Works = async () => {
       <div className="relative flex size-full flex-col items-start gap-5 overflow-hidden">
         <Badge className="gap-2">
           <Briefcase className="size-5" />
-          Works
+          Achievements
         </Badge>
-        <Heading>仕事</Heading>
+        <Heading>実績</Heading>
         <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {contents.map((content, index) => {
             const imagePath =

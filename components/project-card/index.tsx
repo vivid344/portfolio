@@ -25,16 +25,17 @@ const ProjectCard = (props: Props) => {
       delay={props.index / 4}
       duration={0.15}
     >
-      <Card className="size-full">
+      <Card className="flex size-full flex-col">
         <CardHeader>
           <CardTitle>{props.title}</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col items-center">
+        <CardContent className="flex h-full flex-col items-center justify-between">
           <Image
+            className="grow object-cover"
             alt={props.title}
             src={props.src}
-            height={400}
-            width={400}
+            height={350}
+            width={350}
             priority
           />
           <Link
