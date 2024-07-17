@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Wrapper } from "@/components/wrapper";
 import { Content } from "@/lib/types/content";
 import { client } from "@/lib/utils/client";
+import { getOGPImage } from "@/lib/utils/get-ogp";
 import { cn } from "@/lib/utils/shadcn";
 
 const generateMetadata = async (
@@ -41,6 +42,9 @@ const ContentPage = async ({
     endpoint: "works",
     contentId: params.id,
   });
+  const imagePath =
+    (await getOGPImage(content.link)) ||
+    content.image[0].url;
   return (
     <main
       className={cn(
@@ -61,7 +65,7 @@ const ContentPage = async ({
             y={0}
           >
             <Image
-              src={content.image[0].url}
+              src={imagePath}
               alt={content.title}
               loading="eager"
               priority
