@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://vivid344.vercel.app/
+
+# Sitemaps
+Sitemap: https://vivid344.vercel.app/sitemap.xml
+Sitemap: https://vivid344.vercel.app/server-sitemap.xml
