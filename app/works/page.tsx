@@ -6,7 +6,6 @@ import { ProjectCard } from "@/components/project-card";
 import { Badge } from "@/components/ui/badge";
 import { Contents } from "@/lib/types/content";
 import { client } from "@/lib/utils/client";
-import { getOGPImage } from "@/lib/utils/get-ogp";
 import { cn } from "@/lib/utils/shadcn";
 
 const metadata: Metadata = {
@@ -32,10 +31,9 @@ const Works = async () => {
         </Badge>
         <Heading>仕事</Heading>
         <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {contents.map(async (content, index) => {
+          {contents.map((content, index) => {
             const imagePath =
-              (await getOGPImage(content.link)) ||
-              content.image[0].url;
+              content.image?.[0]?.url || "/no_image.png";
             return (
               <ProjectCard
                 key={content.id}
