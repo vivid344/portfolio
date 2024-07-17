@@ -35,6 +35,7 @@ const ProjectCard = (props: Props) => {
             src={props.src}
             height={400}
             width={400}
+            priority
           />
           <Link
             href={`/works/${props.id}`}
