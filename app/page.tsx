@@ -54,15 +54,15 @@ const Home = () => {
         x={-100}
         y={0}
       >
-        <h3 className="font-poppins text-2xl max-sm:text-xl">
+        <p className="font-poppins text-2xl max-sm:text-xl">
           My Name is
-        </h3>
+        </p>
         <h1 className="name_underline font-rubik text-8xl text-primary max-sm:text-6xl">
           Ryoya Miyoshi
         </h1>
-        <div className="py-4 font-poppins text-base text-gray-700 [text-wrap:balance] sm:text-2xl">
+        <h2 className="py-4 font-poppins text-base text-gray-700 [text-wrap:balance] sm:text-2xl">
           I am a Web Frontend Engineer
-        </div>
+        </h2>
         <div className="flex h-fit w-full gap-3 p-4">
           {links.map((link, index) => {
             const delay = 0.55 + index * 0.125;
