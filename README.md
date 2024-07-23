@@ -22,6 +22,9 @@ You can view the deployed site at https://vivid344.vercel.app .
 
 ## Technology
 
+- [Next.js]([https://vercel.com/](https://nextjs.org/))
+- [TailwindCSS](https://tailwindcss.com/)
+- [shadcn-ui](https://ui.shadcn.com/)
 - [Vercel](https://vercel.com/)
 - [microCMS](https://microcms.io/)
 
