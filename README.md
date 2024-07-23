@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio
 
-## Getting Started
+![vivid344 vercel app_](https://github.com/user-attachments/assets/8177e6bc-08f5-4141-a82a-e69d2d65b2d3)
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+vivid344's portfolio repository.
+
+You can view the deployed site at https://vivid344.vercel.app .
+
+## Table of Contents
+
+- [Requirements](#requirements)
+- [Technology](#technology)
+- [Quick Start](#quick-start)
+- [Directory Structure](#directory-structure)
+- [Design](#design)
+
+## Requirements
+
+- node [^20.0.0]
+
+## Technology
+
+- [Vercel](https://vercel.com/)
+- [microCMS](https://microcms.io/)
+
+## Quick Start
+
+### setup
+```shell
+$ corepack enable
+$ pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### start
+```shell
+$ pnpm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Access to http://localhost:3000 .
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Directory Structure
 
-## Learn More
+```
+portfolio
+├── app  # Directory used for routing in Next.js
+├── components  # Directory for reusable components
+│   └── ui  # Directory for components using shadcn/ui
+├── lib
+│   ├── types  # Directory for type definitions
+│   └── utils  # Directory for general utility functions
+├── public  # Directory for placing static files
+└── styles  # Directory for placing CSS
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Each component basically follows the [shadcn/ui](https://ui.shadcn.com/) guidelines.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+When adding a new component, please use the following command:
 
-## Deploy on Vercel
+```shell
+$ pnpm dlx shadcn-ui@latest add <component-name>
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For icons, we are using [lucide](https://lucide.dev/) .
+Please import and use lucide-react.
