@@ -15,6 +15,12 @@ const sitemap = (): MetadataRoute.Sitemap => {
       priority: 0.8,
     },
     {
+      url: "https://vivid344.vercel.app/career",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: "https://vivid344.vercel.app/works",
       lastModified: new Date(),
       changeFrequency: "weekly",

@@ -10,6 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
   Briefcase,
   Home as HomeIcon,
+  School,
   UserRound,
 } from "lucide-react";
 
@@ -27,6 +28,11 @@ const links = [
     href: "/about",
     icon: <UserRound className="size-4 md:size-5" />,
     title: "About",
+  },
+  {
+    href: "/career",
+    icon: <School className="size-4 md:size-5" />,
+    title: "Career",
   },
   {
     href: "/works",

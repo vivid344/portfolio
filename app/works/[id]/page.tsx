@@ -1,7 +1,12 @@
 import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Briefcase, Info, Lightbulb } from "lucide-react";
+import {
+  Briefcase,
+  Info,
+  Lightbulb,
+  SquareArrowOutUpRight,
+} from "lucide-react";
 
 import { Heading } from "@/components/heading";
 import { Badge } from "@/components/ui/badge";
@@ -105,8 +110,9 @@ const ContentPage = async ({
                   href={content.link}
                   rel="noopener noreferrer"
                   target="_blank"
-                  className="py-4 font-poppins text-base text-gray-700 underline [text-wrap:balance] sm:text-2xl"
+                  className="flex items-center gap-2 py-4 font-poppins text-base text-gray-700 underline [text-wrap:balance] sm:text-2xl"
                 >
+                  <SquareArrowOutUpRight className="size-5" />
                   {content.title}
                 </Link>
               </>
