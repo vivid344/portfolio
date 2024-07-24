@@ -48,7 +48,7 @@ const About = () => {
           </Heading>
 
           <Wrapper y={0} x={100}>
-            <p className="w-full font-poppins text-xl text-primary max-sm:text-lg">
+            <p className="w-full font-poppins text-base text-primary sm:text-xl">
               2020年新卒で株式会社サイバーエージェントに入社し、Webフロントエンドエンジニアとして働く。
               <br />
               Reactをベースとしたフレームワークを用いて幅広いサービスの開発を行ってきた。
@@ -59,7 +59,7 @@ const About = () => {
         </div>
         <Wrapper className="block" y={100} delay={0.31}>
           <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
-            <Lightbulb className="size-8" />{" "}
+            <Lightbulb className="size-8" />
             プログラミング言語
           </h2>
           <div className="mt-2 flex h-fit w-full flex-row justify-between gap-2 p-2 max-lg:flex-col lg:gap-7">
@@ -67,7 +67,7 @@ const About = () => {
               return (
                 <div
                   key={hobby}
-                  className="flex flex-row items-center justify-center gap-2 text-xl text-primary max-lg:justify-start lg:mt-3"
+                  className="flex flex-row items-center justify-center gap-2 text-base text-primary max-lg:justify-start md:text-xl lg:mt-3"
                 >
                   <Circle className="size-3" /> {hobby}
                 </div>
@@ -77,7 +77,7 @@ const About = () => {
         </Wrapper>
         <Wrapper className="block" y={100} delay={0.31}>
           <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
-            <Lightbulb className="size-8" />{" "}
+            <Lightbulb className="size-8" />
             フレームワーク等
           </h2>
           <div className="mt-2 flex h-fit w-full flex-row justify-between gap-2 p-2 max-lg:flex-col lg:gap-7">
@@ -85,7 +85,7 @@ const About = () => {
               return (
                 <div
                   key={hobby}
-                  className="flex flex-row items-center justify-center gap-2 text-xl text-primary max-lg:justify-start lg:mt-3"
+                  className="flex flex-row items-center justify-center gap-2 text-base text-primary max-lg:justify-start md:text-lg lg:mt-3"
                 >
                   <Circle className="size-3" /> {hobby}
                 </div>
