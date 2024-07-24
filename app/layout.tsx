@@ -73,7 +73,10 @@ export const metadata: () => Metadata = () => {
       locale: "ja_JP",
       url: "https://vivid344.vercel.app",
       site_name: "三好良弥 | Ryoya Miyoshi",
-      title: "三好良弥 | Ryoya Miyoshi",
+      title: {
+        template: "%s - 三好良弥 | Ryoya Miyoshi",
+        default: "三好良弥 | Ryoya Miyoshi",
+      },
       description:
         "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
       images: ["https://vivid344.vercel.app/ogp.jpg"],
@@ -81,7 +84,10 @@ export const metadata: () => Metadata = () => {
     twitter: {
       card: "summary_large_image",
       creator: "@vivid_344",
-      title: "三好良弥 | Ryoya Miyoshi",
+      title: {
+        template: "%s - 三好良弥 | Ryoya Miyoshi",
+        default: "三好良弥 | Ryoya Miyoshi",
+      },
       description:
         "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
       images: ["https://vivid344.vercel.app/ogp.jpg"],

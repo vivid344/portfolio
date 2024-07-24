@@ -10,6 +10,15 @@ import { cn } from "@/lib/utils/shadcn";
 
 const metadata: Metadata = {
   title: "Works",
+  description: "大学入学以降の実績を紹介します。",
+  openGraph: {
+    title: "Works",
+    description: "大学入学以降の実績を紹介します。",
+  },
+  twitter: {
+    title: "Works",
+    description: "大学入学以降の実績を紹介します。",
+  },
   alternates: {
     canonical: "https://vivid344.vercel.app/works",
   },

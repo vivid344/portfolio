@@ -34,13 +34,19 @@ const generateMetadata = async (
     title: content.title,
     description: content.body,
     openGraph: {
+      title: content.title,
+      description: content.body,
       images: [
         ...(image ? [image] : []),
         ...previousImages,
       ],
     },
+    twitter: {
+      title: content.title,
+      description: content.body,
+    },
     alternates: {
-      canonical: `https://vivid344.vercel.app/works${params.id}`,
+      canonical: `https://vivid344.vercel.app/works/${params.id}`,
     },
   };
 };

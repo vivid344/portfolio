@@ -38,6 +38,15 @@ const career = [
 
 const metadata: Metadata = {
   title: "Career",
+  description: "2011年から現在までの経歴を紹介します。",
+  openGraph: {
+    title: "Career",
+    description: "2011年から現在までの経歴を紹介します。",
+  },
+  twitter: {
+    title: "Career",
+    description: "2011年から現在までの経歴を紹介します。",
+  },
   alternates: {
     canonical: "https://vivid344.vercel.app/career",
   },
