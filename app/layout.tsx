@@ -7,118 +7,77 @@ import { PropsWithChildren } from "react";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import {
-  Briefcase,
-  Home as HomeIcon,
-  School,
-  UserRound,
-} from "lucide-react";
 
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils/shadcn";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const links = [
-  {
-    href: "/",
-    icon: <HomeIcon className="size-4 md:size-5" />,
-    title: "Home",
-  },
-  {
-    href: "/about",
-    icon: <UserRound className="size-4 md:size-5" />,
-    title: "About",
-  },
-  {
-    href: "/career",
-    icon: <School className="size-4 md:size-5" />,
-    title: "Career",
-  },
-  {
-    href: "/works",
-    icon: <Briefcase className="size-4 md:size-5" />,
-    title: "Works",
-  },
-];
-
 export const metadata: () => Metadata = () => {
   return {
     title: {
-      template: "%s - 三好良弥 | Ryoya Miyoshi",
-      default: "三好良弥 | Ryoya Miyoshi",
+      template: `%s - ${SITE_CONFIG.name}`,
+      default: SITE_CONFIG.name,
     },
-    description:
-      "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
+    description: SITE_CONFIG.description,
     icons: "/favicon.ico",
-    keywords: [
-      "三好",
-      "良弥",
-      "三好 良弥",
-      "三好良弥",
-      "みよし",
-      "りょうや",
-      "みよし りょうや",
-      "みよしりょうや",
-      "vivid344",
-    ],
-    authors: [
-      {
-        name: "三好 良弥",
-        url: "https://github.com/vivid344",
-      },
-    ],
-    creator: "三好 良弥",
+    keywords: SITE_CONFIG.keywords,
+    authors: [SITE_CONFIG.author],
+    creator: SITE_CONFIG.author.name,
     openGraph: {
       type: "website",
-      locale: "ja_JP",
-      url: "https://vivid344.vercel.app",
-      site_name: "三好良弥 | Ryoya Miyoshi",
+      locale: SITE_CONFIG.locale,
+      url: SITE_CONFIG.url,
+      site_name: SITE_CONFIG.name,
       title: {
-        template: "%s - 三好良弥 | Ryoya Miyoshi",
-        default: "三好良弥 | Ryoya Miyoshi",
+        template: `%s - ${SITE_CONFIG.name}`,
+        default: SITE_CONFIG.name,
       },
-      description:
-        "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
-      images: ["https://vivid344.vercel.app/ogp.jpg"],
+      description: SITE_CONFIG.description,
+      images: [SITE_CONFIG.ogImage],
     },
     twitter: {
       card: "summary_large_image",
-      creator: "@vivid_344",
+      creator: SITE_CONFIG.twitter.creator,
       title: {
-        template: "%s - 三好良弥 | Ryoya Miyoshi",
-        default: "三好良弥 | Ryoya Miyoshi",
+        template: `%s - ${SITE_CONFIG.name}`,
+        default: SITE_CONFIG.name,
       },
-      description:
-        "Webフロントエンドエンジニア 三好良弥のポートフォリオサイトです。",
-      images: ["https://vivid344.vercel.app/ogp.jpg"],
+      description: SITE_CONFIG.description,
+      images: [SITE_CONFIG.ogImage],
     },
   };
 };
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <body
         className={cn(
           "flex min-h-screen w-full flex-col",
           inter.className,
         )}
       >
-        <header className="sticky top-0 z-10 flex h-12 items-center gap-4 border-b bg-background px-4 md:h-16 md:px-6">
-          <nav className="flex gap-4 text-sm font-medium md:items-center md:gap-5 md:text-lg lg:gap-6">
-            {links.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="flex items-center text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {item.icon}
-                <p className="ml-1">{item.title}</p>
-              </Link>
-            ))}
-          </nav>
-        </header>
-        {children}
+        <ThemeProvider>
+          <header className="sticky top-0 z-10 flex h-12 items-center justify-between gap-4 border-b bg-background px-4 md:h-16 md:px-6">
+            <nav className="flex gap-4 text-sm font-medium md:items-center md:gap-5 md:text-lg lg:gap-6">
+              {NAV_LINKS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <item.icon className="size-4 md:size-5" />
+                  <p className="ml-1">{item.title}</p>
+                </Link>
+              ))}
+            </nav>
+            <ThemeToggle />
+          </header>
+          {children}
+        </ThemeProvider>
         <SpeedInsights />
         <Analytics />
       </body>
