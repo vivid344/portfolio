@@ -33,12 +33,18 @@ const Works = async () => {
   return (
     <PageContainer centered>
       <div className="relative flex size-full flex-col items-start gap-5 overflow-hidden">
-        <Badge className="gap-2">
-          <Briefcase className="size-5" />
+        <Badge className="gap-2" role="presentation">
+          <Briefcase
+            className="size-5"
+            aria-hidden="true"
+          />
           Achievements
         </Badge>
         <Heading>実績</Heading>
-        <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <section
+          className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          aria-label="プロジェクト一覧"
+        >
           {contents.map((content, index) => {
             const imagePath =
               content.image?.[0]?.url || "/no_image.png";
@@ -53,7 +59,7 @@ const Works = async () => {
               />
             );
           })}
-        </div>
+        </section>
       </div>
     </PageContainer>
   );

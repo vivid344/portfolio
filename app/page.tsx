@@ -44,7 +44,10 @@ const Home = () => {
           <h2 className="py-4 font-poppins text-base text-[var(--text-secondary)] [text-wrap:balance] sm:text-2xl">
             I am a Web Frontend Engineer
           </h2>
-          <div className="flex h-fit w-full gap-3 p-4">
+          <nav
+            className="flex h-fit w-full gap-3 p-4"
+            aria-label="ソーシャルリンク"
+          >
             {SOCIAL_LINKS.map((link, index) => {
               const delay = 0.55 + index * 0.125;
               return (
@@ -54,9 +57,10 @@ const Home = () => {
                   y={50}
                 >
                   <Link
-                    target="blank"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href={link.href}
-                    aria-label={link.name}
+                    aria-label={`${link.name}（新しいタブで開きます）`}
                     className={cn(
                       buttonVariants({
                         variant: "outline",
@@ -64,12 +68,12 @@ const Home = () => {
                       }),
                     )}
                   >
-                    <link.icon />
+                    <link.icon aria-hidden="true" />
                   </Link>
                 </Wrapper>
               );
             })}
-          </div>
+          </nav>
         </Wrapper>
         <Wrapper
           className="relative block h-full w-[47%] min-w-[250px] max-lg:hidden"

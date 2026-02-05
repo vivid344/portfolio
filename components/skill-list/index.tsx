@@ -19,7 +19,7 @@ export const SkillList = ({
   return (
     <Wrapper className="block" y={100} delay={delay}>
       <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
-        <Lightbulb className="size-8" />
+        <Lightbulb className="size-8" aria-hidden="true" />
         {title}
       </h2>
       <div className="mt-4 flex h-fit w-full flex-row flex-wrap gap-3 p-2">

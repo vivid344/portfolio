@@ -26,14 +26,20 @@ const ProjectCard = (props: Props) => {
       delay={props.index / 4}
       duration={0.15}
     >
-      <Card className="flex size-full flex-col">
+      <Card
+        className="flex size-full flex-col"
+        role="article"
+        aria-labelledby={`project-title-${props.id}`}
+      >
         <CardHeader>
-          <CardTitle>{props.title}</CardTitle>
+          <CardTitle id={`project-title-${props.id}`}>
+            {props.title}
+          </CardTitle>
         </CardHeader>
         <CardContent className="flex h-full flex-col items-center justify-between">
           <Image
             className="grow object-cover"
-            alt={props.title}
+            alt={`${props.title}のサムネイル画像`}
             src={props.src}
             height={350}
             width={350}
@@ -43,6 +49,7 @@ const ProjectCard = (props: Props) => {
           <Link
             href={`/works/${props.id}`}
             className="mt-4"
+            aria-label={`${props.title}の詳細を見る`}
           >
             <Button type="button">Show more</Button>
           </Link>

@@ -1,6 +1,10 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React, {
+  ReactNode,
+  useEffect,
+  useState,
+} from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {
@@ -12,6 +16,7 @@ type Props = {
   duration?: number;
   scale?: number;
 };
+
 const Wrapper = (props: Props) => {
   const {
     delay = 0.25,
@@ -20,6 +25,36 @@ const Wrapper = (props: Props) => {
     duration = 0.2,
     scale = 0,
   } = props;
+
+  const [prefersReducedMotion, setPrefersReducedMotion] =
+    useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      setPrefersReducedMotion(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () =>
+      mediaQuery.removeEventListener(
+        "change",
+        handleChange,
+      );
+  }, []);
+
+  if (prefersReducedMotion) {
+    return (
+      <div className={props.className}>
+        {props.children}
+      </div>
+    );
+  }
+
   return (
     <AnimatePresence>
       <motion.div
