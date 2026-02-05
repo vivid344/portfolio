@@ -10,18 +10,29 @@ describe("cn utility", () => {
 
   it("handles conditional classes", () => {
     const isActive = true;
-    const result = cn("base-class", isActive && "active-class");
+    const result = cn(
+      "base-class",
+      isActive && "active-class",
+    );
     expect(result).toBe("base-class active-class");
   });
 
   it("handles false conditions", () => {
     const isActive = false;
-    const result = cn("base-class", isActive && "active-class");
+    const result = cn(
+      "base-class",
+      isActive && "active-class",
+    );
     expect(result).toBe("base-class");
   });
 
   it("handles undefined and null values", () => {
-    const result = cn("base-class", undefined, null, "another-class");
+    const result = cn(
+      "base-class",
+      undefined,
+      null,
+      "another-class",
+    );
     expect(result).toBe("base-class another-class");
   });
 

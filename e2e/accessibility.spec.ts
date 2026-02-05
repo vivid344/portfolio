@@ -1,27 +1,35 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Accessibility", () => {
-  test("home page should have proper heading structure", async ({ page }) => {
+  test("home page should have proper heading structure", async ({
+    page,
+  }) => {
     await page.goto("/");
     const h1 = page.getByRole("heading", { level: 1 });
     await expect(h1).toBeVisible();
   });
 
-  test("about page should have proper heading structure", async ({ page }) => {
+  test("about page should have proper heading structure", async ({
+    page,
+  }) => {
     await page.goto("/about");
     const h1 = page.getByRole("heading", { level: 1 });
     await expect(h1).toBeVisible();
     await expect(h1).toContainText(/about/i);
   });
 
-  test("works page should have proper heading structure", async ({ page }) => {
+  test("works page should have proper heading structure", async ({
+    page,
+  }) => {
     await page.goto("/works");
     const h1 = page.getByRole("heading", { level: 1 });
     await expect(h1).toBeVisible();
     await expect(h1).toContainText(/works/i);
   });
 
-  test("career page should have proper heading structure", async ({ page }) => {
+  test("career page should have proper heading structure", async ({
+    page,
+  }) => {
     await page.goto("/career");
     const h1 = page.getByRole("heading", { level: 1 });
     await expect(h1).toBeVisible();
@@ -40,7 +48,9 @@ test.describe("Accessibility", () => {
     }
   });
 
-  test("links should have accessible names", async ({ page }) => {
+  test("links should have accessible names", async ({
+    page,
+  }) => {
     await page.goto("/");
     const links = page.getByRole("link");
     const count = await links.count();
@@ -48,7 +58,11 @@ test.describe("Accessibility", () => {
     for (let i = 0; i < count; i++) {
       const link = links.nth(i);
       const accessibleName = await link.evaluate((el) => {
-        return el.getAttribute("aria-label") || el.textContent?.trim() || "";
+        return (
+          el.getAttribute("aria-label") ||
+          el.textContent?.trim() ||
+          ""
+        );
       });
       expect(accessibleName.length).toBeGreaterThan(0);
     }

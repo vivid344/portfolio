@@ -9,3 +9,9 @@ tailwind.config.ts
 **/*.yaml
 **/*.json
 **/*.css
+e2e/**
+vitest.config.ts
+vitest.setup.ts
+playwright.config.ts
+**/*.test.ts
+**/*.test.tsx
