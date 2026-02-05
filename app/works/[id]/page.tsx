@@ -84,6 +84,7 @@ const ContentPage = async ({
               priority
               height={600}
               width={600}
+              sizes="(max-width: 976px) 100vw, 50vw"
             />
           </Wrapper>
           <Wrapper

@@ -49,6 +49,7 @@ const Works = async () => {
                 index={index}
                 title={content.title}
                 src={imagePath}
+                priority={index < 4}
               />
             );
           })}

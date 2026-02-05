@@ -84,6 +84,7 @@ const Home = () => {
             priority
             height={400}
             width={400}
+            sizes="(max-width: 976px) 0px, 400px"
           />
         </Wrapper>
       </PageContainer>
