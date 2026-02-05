@@ -1,5 +1,8 @@
-import { Circle, Lightbulb } from "lucide-react";
+"use client";
 
+import { Lightbulb } from "lucide-react";
+
+import { AnimatedBadge } from "@/components/ui/animated-badge";
 import { Wrapper } from "@/components/wrapper";
 
 type SkillListProps = {
@@ -19,25 +22,20 @@ export const SkillList = ({
         <Lightbulb className="size-8" aria-hidden="true" />
         {title}
       </h2>
-      <ul
-        className="mt-2 flex h-fit w-full flex-row justify-between gap-2 p-2 max-lg:flex-col lg:gap-7"
-        aria-label={title}
-      >
-        {items.map((item) => {
+      <div className="mt-4 flex h-fit w-full flex-row flex-wrap gap-3 p-2">
+        {items.map((item, index) => {
           return (
-            <li
+            <AnimatedBadge
               key={item}
-              className="flex flex-row items-center justify-center gap-2 text-base text-primary max-lg:justify-start md:text-lg lg:mt-3"
+              variant="skill"
+              delay={delay + index * 0.1}
+              className="px-4 py-2 text-sm md:text-base"
             >
-              <Circle
-                className="size-3"
-                aria-hidden="true"
-              />
               {item}
-            </li>
+            </AnimatedBadge>
           );
         })}
-      </ul>
+      </div>
     </Wrapper>
   );
 };
