@@ -4,13 +4,13 @@ import { Inter, Poppins, Rubik } from "next/font/google";
 import "@/styles/globals.css";
 
 import { PropsWithChildren } from "react";
-import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import { Navigation } from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils/shadcn";
 
 const inter = Inter({
@@ -118,22 +118,19 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         )}
       >
         <ThemeProvider>
-          <header className="sticky top-0 z-10 flex h-12 items-center justify-between gap-4 border-b bg-background px-4 md:h-16 md:px-6">
-            <nav className="flex gap-4 text-sm font-medium md:items-center md:gap-5 md:text-lg lg:gap-6">
-              {NAV_LINKS.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="flex items-center text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <item.icon className="size-4 md:size-5" />
-                  <p className="ml-1">{item.title}</p>
-                </Link>
-              ))}
-            </nav>
+          <a href="#main-content" className="skip-link">
+            メインコンテンツへスキップ
+          </a>
+          <header
+            className="sticky top-0 z-10 flex h-12 items-center justify-between gap-4 border-b bg-background px-4 md:h-16 md:px-6"
+            role="banner"
+          >
+            <Navigation />
             <ThemeToggle />
           </header>
-          {children}
+          <main id="main-content" role="main">
+            {children}
+          </main>
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />

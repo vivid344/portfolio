@@ -35,8 +35,8 @@ const About = () => {
   return (
     <PageContainer centered>
       <div className="relative flex size-full flex-col items-start gap-5 overflow-hidden">
-        <Badge className="gap-2">
-          <User2 className="size-5" />
+        <Badge className="gap-2" role="presentation">
+          <User2 className="size-5" aria-hidden="true" />
           About me
         </Badge>
         <div className="flex flex-col gap-3">

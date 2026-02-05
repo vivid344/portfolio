@@ -20,7 +20,7 @@
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 215.4 25% 35%;
 
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
@@ -35,7 +35,7 @@
     --radius: 0.5rem;
 
     --dot-pattern: #21b5bf;
-    --text-secondary: #374151;
+    --text-secondary: #1f2937;
     --timeline-border: #3c3c3c;
   }
 
@@ -149,4 +149,44 @@
   100% {
     transform: translateY(-83.33%);
   }
+}
+
+/* Accessibility: Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-text-slide {
+    animation: none;
+  }
+}
+
+/* Accessibility: Focus styles */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Accessibility: Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: hsl(var(--background));
+  border: 2px solid hsl(var(--ring));
+  border-radius: var(--radius);
+  font-weight: 500;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
 }
