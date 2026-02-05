@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import { Briefcase } from "lucide-react";
 
 import { Heading } from "@/components/heading";
+import { PageContainer } from "@/components/page-container";
 import { ProjectCard } from "@/components/project-card";
 import { Badge } from "@/components/ui/badge";
+import { SITE_CONFIG } from "@/lib/constants";
 import { Contents } from "@/lib/types/content";
 import { client } from "@/lib/utils/client";
-import { cn } from "@/lib/utils/shadcn";
 
 const metadata: Metadata = {
   title: "Works",
@@ -20,7 +21,7 @@ const metadata: Metadata = {
     description: "大学入学以降の実績を紹介します。",
   },
   alternates: {
-    canonical: "https://vivid344.vercel.app/works",
+    canonical: `${SITE_CONFIG.url}/works`,
   },
 };
 
@@ -30,12 +31,7 @@ const Works = async () => {
   });
 
   return (
-    <main
-      className={cn(
-        "screen relative flex min-h-[calc(100vh_-_theme(spacing.16))] items-start justify-between break-words bg-transparent bg-[radial-gradient(#21b5bf_1px,transparent_1px)] px-40 pb-4 pt-12 [background-size:16px_16px] max-md:p-8 md:items-center",
-        { "bg-white": "#E6E7EB" },
-      )}
-    >
+    <PageContainer centered>
       <div className="relative flex size-full flex-col items-start gap-5 overflow-hidden">
         <Badge className="gap-2">
           <Briefcase className="size-5" />
@@ -53,12 +49,13 @@ const Works = async () => {
                 index={index}
                 title={content.title}
                 src={imagePath}
+                priority={index < 4}
               />
             );
           })}
         </div>
       </div>
-    </main>
+    </PageContainer>
   );
 };
 

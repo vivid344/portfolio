@@ -15,6 +15,7 @@ type Props = {
   title: string;
   src: string;
   id: string;
+  priority?: boolean;
 };
 
 const ProjectCard = (props: Props) => {
@@ -36,7 +37,8 @@ const ProjectCard = (props: Props) => {
             src={props.src}
             height={350}
             width={350}
-            priority
+            sizes="(max-width: 720px) 100vw, (max-width: 976px) 50vw, 350px"
+            priority={props.priority}
           />
           <Link
             href={`/works/${props.id}`}

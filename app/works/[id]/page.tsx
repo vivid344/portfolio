@@ -9,11 +9,12 @@ import {
 } from "lucide-react";
 
 import { Heading } from "@/components/heading";
+import { PageContainer } from "@/components/page-container";
 import { Badge } from "@/components/ui/badge";
 import { Wrapper } from "@/components/wrapper";
+import { SITE_CONFIG } from "@/lib/constants";
 import { Content } from "@/lib/types/content";
 import { client } from "@/lib/utils/client";
-import { cn } from "@/lib/utils/shadcn";
 
 const generateMetadata = async (
   {
@@ -46,7 +47,7 @@ const generateMetadata = async (
       description: content.body,
     },
     alternates: {
-      canonical: `https://vivid344.vercel.app/works/${params.id}`,
+      canonical: `${SITE_CONFIG.url}/works/${params.id}`,
     },
   };
 };
@@ -61,12 +62,7 @@ const ContentPage = async ({
     contentId: params.id,
   });
   return (
-    <main
-      className={cn(
-        "screen relative flex min-h-[calc(100vh_-_theme(spacing.16))] items-start justify-between break-words bg-transparent bg-[radial-gradient(#21b5bf_1px,transparent_1px)] px-40 pb-4 pt-12 [background-size:16px_16px] max-md:p-8 md:items-center",
-        { "bg-white": "#E6E7EB" },
-      )}
-    >
+    <PageContainer centered>
       <div className="flex size-full flex-col items-start gap-5 overflow-hidden">
         <Badge className="gap-2">
           <Briefcase className="size-5" />
@@ -88,6 +84,7 @@ const ContentPage = async ({
               priority
               height={600}
               width={600}
+              sizes="(max-width: 976px) 100vw, 50vw"
             />
           </Wrapper>
           <Wrapper
@@ -98,13 +95,13 @@ const ContentPage = async ({
             <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
               <Info className="size-8" /> 詳細
             </h2>
-            <div className="whitespace-pre-wrap py-4 font-poppins text-base text-gray-700 sm:text-2xl">
+            <div className="whitespace-pre-wrap py-4 font-poppins text-base text-[var(--text-secondary)] sm:text-2xl">
               {content.body}
             </div>
             <h2 className="icon_underline relative flex gap-2 font-poppins text-3xl font-semibold text-primary max-sm:text-2xl">
               <Lightbulb className="size-8" /> 使用技術
             </h2>
-            <div className="py-4 font-poppins text-base text-gray-700 [text-wrap:balance] sm:text-2xl">
+            <div className="py-4 font-poppins text-base text-[var(--text-secondary)] [text-wrap:balance] sm:text-2xl">
               {content.technology}
             </div>
             {content.link && (
@@ -116,7 +113,7 @@ const ContentPage = async ({
                   href={content.link}
                   rel="noopener noreferrer"
                   target="_blank"
-                  className="flex items-center gap-2 py-4 font-poppins text-base text-gray-700 underline [text-wrap:balance] sm:text-2xl"
+                  className="flex items-center gap-2 py-4 font-poppins text-base text-[var(--text-secondary)] underline [text-wrap:balance] sm:text-2xl"
                 >
                   <SquareArrowOutUpRight className="size-5" />
                   {content.title}
@@ -126,7 +123,7 @@ const ContentPage = async ({
           </Wrapper>
         </div>
       </div>
-    </main>
+    </PageContainer>
   );
 };
 

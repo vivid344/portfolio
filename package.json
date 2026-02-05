@@ -22,7 +22,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.2",
-    "jsdom": "^24.1.0",
     "lucide-react": "^0.408.0",
     "microcms-js-sdk": "^3.1.2",
     "next": "15.0.0-canary.63",
@@ -34,7 +33,6 @@
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/jsdom": "^21.1.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
