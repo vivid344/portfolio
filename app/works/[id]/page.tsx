@@ -20,13 +20,14 @@ const generateMetadata = async (
   {
     params,
   }: {
-    params: { id: string };
+    params: Promise<{ id: string }>;
   },
   parent: ResolvingMetadata,
 ): Promise<Metadata> => {
+  const { id } = await params;
   const content: Content = await client.get({
     endpoint: "works",
-    contentId: params.id,
+    contentId: id,
   });
   const image = content.image?.[0]?.url;
   const previousImages =
@@ -47,7 +48,7 @@ const generateMetadata = async (
       description: content.body,
     },
     alternates: {
-      canonical: `${SITE_CONFIG.url}/works/${params.id}`,
+      canonical: `${SITE_CONFIG.url}/works/${id}`,
     },
   };
 };
@@ -55,11 +56,12 @@ const generateMetadata = async (
 const ContentPage = async ({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) => {
+  const { id } = await params;
   const content: Content = await client.get({
     endpoint: "works",
-    contentId: params.id,
+    contentId: id,
   });
   return (
     <PageContainer centered>

@@ -18,7 +18,8 @@ You can view the deployed site at https://vivid344.vercel.app .
 
 ## Requirements
 
-- node [^20.0.0]
+- Node.js 22.12+ (22.x LTS)
+- pnpm 9.5.0
 
 ## Technology
 

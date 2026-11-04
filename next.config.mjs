@@ -2,7 +2,6 @@
 const nextConfig = {
   experimental: {
     reactCompiler: true,
-    ppr: true,
   },
   images: {
     formats: ["image/avif", "image/webp"],
